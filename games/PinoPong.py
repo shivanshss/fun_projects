@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Spyder Editor
+Spyder Editor @bloodmark
 
-This is a game
+This is a ping pong game
 """
 
 import turtle
