@@ -1,0 +1,64 @@
+# YouTube Video Downloader Script
+
+This script is designed to download YouTube videos using the `yt-dlp` command-line tool. It reads video links and filenames from an input text file, downloads the videos in the best available format, and saves them with the specified filenames.
+
+## Prerequisites
+
+Before running the script, ensure you have the `yt-dlp` tool installed on your system. You can install it using the following command:
+
+```bash
+pip install yt-dlp
+
+Usage
+
+    Open a terminal window.
+
+    Navigate to the directory where the script is located using the cd command:
+
+    bash
+
+cd /path/to/script_directory
+
+Make the script executable (if not already):
+
+bash
+
+chmod +x youtube_downloader.sh
+
+Create an input text file with the following format:
+
+Each line should contain a YouTube video link followed by a tab character and then the desired filename.
+
+Example input.txt:
+
+arduino
+
+https://www.youtube.com/watch?v=abcd1234	my_video1.mp4
+https://www.youtube.com/watch?v=efgh5678	my_video2.mp4
+
+Replace the URLs and filenames with the actual video links and desired filenames.
+
+Edit the script to specify the correct input file path:
+
+bash
+
+input_file="/path/to/input.txt"
+
+Run the script:
+
+bash
+
+    ./youtube_downloader.sh
+
+Script Explanation
+
+    The script uses the yt-dlp tool to download YouTube videos.
+    It reads video links and filenames from the specified input text file.
+    For each line in the input file, it downloads the video using the best available format.
+    The -o flag specifies the output filename for the downloaded video.
+
+Note
+
+    The script assumes that each line in the input file contains a YouTube video link followed by a tab character and then the desired filename.
+    Please make sure to respect the terms of use of YouTube and other platforms when using this script.
+    The best format available will be automatically chosen for download.
