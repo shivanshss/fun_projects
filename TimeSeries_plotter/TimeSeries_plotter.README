@@ -1,0 +1,53 @@
+Function: This script generates interactive combined line plots from a given dataset using R's plotly library.
+
+Interactive Plot: The resulting plot visually displays multiple line plots from each dataset column, allowing dynamic exploration of trends and patterns.
+
+Usage: Provide the dataset path, run the script in R, and get an interactive HTML plot showing combined time series data.
+
+Combined time series plot generator
+
+This script generates a combined plot from a given dataset, displaying multiple line plots for each column. The script uses the plotly library in R to create an interactive HTML plot.
+Prerequisites
+
+Before using the script, ensure you have the plotly library installed. You can install it by running the following command:
+
+R
+
+if (!requireNamespace("plotly", quietly = TRUE)) {
+  install.packages("plotly")
+}
+
+Usage
+
+    Load your data: Replace 'data.csv' in the following line with the actual path to your data file. The data should be in a tab-separated format with headers.
+
+    R
+
+data <- read.csv("/path/to/your/data/file.tab", sep = "\t", header = TRUE)
+
+Create a directory for plots: The script will create a directory named 'plots' to save the generated plots. If the directory already exists, it will be used.
+
+R
+
+    if (!dir.exists("plots")) {
+      dir.create("plots")
+    }
+
+    Generate the combined plot:
+        The script will iterate through each column in the dataset and create a trace object for columns with non-NA values.
+        Traces are stored in a list, traces.
+        The traces are then added to a combined plot using plot_ly().
+
+    Save the plot:
+        The interactive HTML plot will be saved as 'combined_plot.html' in the current working directory.
+        You can change the html_file variable to specify a different filename if needed.
+
+    Run the script:
+        Run the script in an R environment to generate the combined plot.
+
+Example
+
+For a quick demonstration, you can use the provided example data file 'test.txt' in the test folder.
+Note
+
+Columns with all NA values will be skipped from the plot.
