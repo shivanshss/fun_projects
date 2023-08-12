@@ -1,0 +1,78 @@
+Function: The Interactive Combined Plot Generator script, using R's tidyverse and plotly libraries, produces an interactive plot showcasing boxplots for every dataset column, revealing data distribution insights.
+
+Interactive Plot: The resulting plot is an amalgamation of boxplots representing each column's data distribution. Interactive features allow hovering over boxpoints to view corresponding values.
+
+Usage: Load the necessary tidyverse and plotly packages, read your dataset, reshape data using pivot_longer(), generate an interactive combined plot using plot_ly(), export it using saveWidget(), and execute the script in an R environment for an interactive boxplot visualization.
+
+Interactive Combined Plot Generator
+
+This script generates an interactive combined plot using the tidyverse and plotly libraries in R. The plot displays boxplots for each column of a given dataset, providing insights into the distribution of data.
+Prerequisites
+
+Before using the script, ensure you have the tidyverse and plotly libraries installed. If they are not already installed, you can do so by running the following commands:
+
+R
+
+if (!requireNamespace("tidyverse", quietly = TRUE)) {
+  install.packages("tidyverse")
+}
+
+if (!requireNamespace("plotly", quietly = TRUE)) {
+  install.packages("plotly")
+}
+
+Usage
+
+    Load necessary packages: The script requires the tidyverse and plotly libraries to be loaded. This can be done using the following commands:
+
+    R
+
+library(tidyverse)
+library(plotly)
+
+Read your data: Replace 'test.txt' in the following line with the actual path to your data file. The data should be in a tab-separated format with headers.
+
+R
+
+data <- read.delim("/path/to/your/data/file.txt", sep = "\t", header = TRUE)
+
+Reshape data for plotting: The script reshapes the data using the pivot_longer() function from the tidyverse package. This step is necessary to prepare the data for boxplot generation.
+
+R
+
+data_long <- data %>%
+  pivot_longer(cols = everything(), names_to = "Column", values_to = "Value")
+
+Generate the interactive combined plot:
+
+    The script creates an interactive combined plot using plot_ly() from the plotly package.
+    The plot consists of boxplots for each column, with boxpoints displayed and hover text showing the corresponding value.
+
+Export the plot:
+
+    The interactive HTML plot will be saved as 'interactive_combined_plot.html' in the current working directory.
+
+    If the htmlwidgets library is not already installed, you can install it using:
+
+    R
+
+if (!requireNamespace("htmlwidgets", quietly = TRUE)) {
+  install.packages("htmlwidgets")
+}
+
+Then, use the saveWidget() function to export the plot:
+
+R
+
+        library(htmlwidgets)
+        saveWidget(combined_plot, "interactive_combined_plot.html")
+
+    Run the script:
+        Run the script in an R environment to generate the interactive combined plot.
+
+Example
+
+For a quick demonstration, you can use the provided example data file 'test.txt'.
+Note
+
+This script creates boxplots for each column of the dataset, providing insights into the distribution of data. Customize the visualization and layout options as needed.
