@@ -1,10 +1,10 @@
-Python Ping Pong Game
+# Python Ping Pong Game
 
-Ping Pong Game
-Description
+## Ping Pong Game
+## Description
 
 This is a simple Ping Pong game created in Python using the Turtle graphics library. The game features two paddles, one controlled by the player on the left and the other controlled by the player on the right. The objective is to bounce the ball back and forth between the paddles without letting it pass your paddle. Each time the ball passes a paddle and hits the screen edge behind it, the opposing player scores a point.
-Features
+## Features
 
     Two-player game (Player A vs Player B)
     Paddle controls:
@@ -13,19 +13,19 @@ Features
     Realistic ball physics with bounce sounds
     Score display for both players at the top of the screen
 
-How to Play
+## How to Play
 
     Run the Python script using your preferred Python interpreter (e.g., Python 3).
     Player A can move their paddle up with the 'W' key and down with the 'S' key.
     Player B can move their paddle up with the Up Arrow key and down with the Down Arrow key.
     The game continues until you close the game window.
 
-Requirements
+## Requirements
 
     Python 3.x
     Turtle graphics library (usually comes pre-installed with Python)
 
-Usage
+## Usage
 
     Clone or download the repository to your local machine.
 
@@ -35,12 +35,12 @@ Usage
 
     python ping_pong_game.py
 
-License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 Credits
 
     Game developed by bloodmark
     Sound effects from FreeSound
-    Turtle graphics library by Python Software Foundation
+    Turtle Graphics Library by Python Software Foundation
 
