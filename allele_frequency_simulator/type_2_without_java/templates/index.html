@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allele Frequency Drift Simulation</title>
+</head>
+<body>
+    <h1>Allele Frequency Drift Simulation</h1>
+    <form method="POST">
+        <label for="mutation_rate">Mutation Rate:</label>
+        <input type="number" step="0.00001" name="mutation_rate" min="0" max="0.00001" required><br>
+
+        <label for="starting_frequency">Starting Frequency:</label>
+        <input type="number" step="0.01" name="starting_frequency" min="0" max="1" required><br>
+
+        <label for="population_size">Population Size:</label>
+        <input type="number" name="population_size" required><br>
+
+        <label for="generations">Generations:</label>
+        <input type="number" name="generations" min="0" max="10000" required><br> <!-- Adjusted generations range -->
+
+        <label for="drift_variance">Drift Variance:</label>
+        <input type="number" step="0.01" name="drift_variance" min="0" required><br>
+
+        <input type="submit" value="Simulate">
+    </form>
+
+    {% if img_data %}
+    <h2>Simulation Result</h2>
+    <img src="data:image/png;base64,{{ img_data }}" alt="Simulation Plot">
+    {% endif %}
+
+    {% if end_message %}
+    <h2>{{ end_message }}</h2>
+    {% endif %}
+</body>
+</html>
+

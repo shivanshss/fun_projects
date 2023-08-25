@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allele Frequency Simulation</title>
+</head>
+<body>
+    <h1>Allele Frequency Simulation</h1>
+    <form id="simulation-form">
+        <label for="mutation-rate">Mutation Rate:</label>
+        <input type="number" id="mutation-rate" step="0.01" required><br>
+        <label for="starting-frequency">Starting Allele Frequency:</label>
+        <input type="number" id="starting-frequency" step="0.01" required><br>
+        <label for="population-size">Population Size:</label>
+        <input type="number" id="population-size" required><br>
+        <button type="button" onclick="runSimulation()">Run Simulation</button>
+    </form>
+    <div id="graph"></div>
+    <script src="AFS.js"></script>
+</body>
+</html>
+
